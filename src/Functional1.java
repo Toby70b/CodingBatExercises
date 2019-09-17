@@ -10,12 +10,12 @@ public class Functional1 {
 
         //Given a list of integers, returns a list where each integer is multiplied with itself.
         public List<Integer> square(List<Integer> nums) {
-            return nums;
+            return nums.stream().map(n-> n*n).collect(Collectors.toList());
         }
 
         //Given a list of strings, returns a list where each string has "*" added at its end.
         public List<String> addStar(List<String> strings) {
-            return strings;
+            return strings.stream().map(n-> n.concat("*")).collect(Collectors.toList());
         }
 
         //Given a list of strings, returns a list where each string is replaced by 3 copies of the string concatenated together.

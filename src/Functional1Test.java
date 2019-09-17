@@ -29,15 +29,43 @@ class Functional1Test {
     @Test
     void doubling_Empty_List() {
         List<Integer> nums = Arrays.asList();
+        assertEquals( functional1.square(nums), Arrays.asList());
+    }
+
+    @Test
+    void square_3_Positive_Numbers() {
+        List<Integer> nums = Arrays.asList(1,2,3);
+        assertEquals( functional1.square(nums), Arrays.asList(1,4,9));
+    }
+
+    @Test
+    void square_Numerous_Positive_And_Negative_Numbers() {
+        List<Integer> nums = Arrays.asList(6, 8, -6, -8, 1);
+        assertEquals( functional1.square(nums), Arrays.asList(36, 64, 36, 64, 1));
+    }
+
+    @Test
+    void square_Empty_List() {
+        List<Integer> nums = Arrays.asList();
         assertEquals( functional1.doubling(nums), Arrays.asList());
     }
 
     @Test
-    void square() {
+    void addStarToLetters() {
+        List<String> strings = Arrays.asList("a", "bb", "ccc");
+        assertEquals( functional1.addStar(strings), Arrays.asList("a*", "bb*", "ccc*"));
     }
 
     @Test
-    void addStar() {
+    void addStarToWords() {
+        List<String> strings = Arrays.asList("hello", "there");
+        assertEquals( functional1.addStar(strings), Arrays.asList("hello*", "there*"));
+    }
+
+    @Test
+    void addStarToStar() {
+        List<String> strings = Arrays.asList("*");
+        assertEquals( functional1.addStar(strings), Arrays.asList("**"));
     }
 
     @Test
