@@ -1,0 +1,2 @@
+public class Functional1 {
+}
