@@ -69,19 +69,75 @@ class Functional1Test {
     }
 
     @Test
-    void copies3() {
+    void copies3Letters() {
+        List<String> strings = Arrays.asList("a", "bb", "ccc");
+        assertEquals( functional1.copies3(strings), Arrays.asList("aaa", "bbbbbb", "ccccccccc"));
     }
 
     @Test
-    void moreY() {
+    void copies3Words() {
+        List<String> strings = Arrays.asList("24", "a", "");
+        assertEquals( functional1.copies3(strings), Arrays.asList("242424", "aaa", ""));
     }
 
     @Test
-    void math1() {
+    void copies3Words2() {
+        List<String> strings = Arrays.asList("hello", "there");
+        assertEquals( functional1.copies3(strings), Arrays.asList("hellohellohello", "theretherethere"));
     }
 
     @Test
-    void rightDigit() {
+    void moreYLetters() {
+        List<String> strings = Arrays.asList("a", "b", "c");
+        assertEquals( functional1.moreY(strings), Arrays.asList("yay", "yby", "ycy"));
+    }
+
+    @Test
+    void moreYWords() {
+        List<String> strings = Arrays.asList("hello", "there");
+        assertEquals( functional1.moreY(strings), Arrays.asList("yhelloy", "ytherey"));
+    }
+
+    @Test
+    void moreYWordWithY() {
+        List<String> strings = Arrays.asList("yay");
+        assertEquals( functional1.moreY(strings), Arrays.asList("yyayy"));
+    }
+
+    @Test
+    void math1TestWithSomeNumbers() {
+        List<Integer> nums = Arrays.asList(1, 2, 3);
+        assertEquals( functional1.math1(nums), Arrays.asList(20, 30, 40));
+    }
+
+    @Test
+    void math1TestWithSomeMoreNumbers() {
+        List<Integer> nums = Arrays.asList(6, 8, 6, 8, 1);
+        assertEquals( functional1.math1(nums), Arrays.asList(70, 90, 70, 90, 20));
+    }
+
+    @Test
+    void math1TestWith10() {
+        List<Integer> nums = Arrays.asList(10);
+        assertEquals( functional1.math1(nums), Arrays.asList(110));
+    }
+
+    @Test
+    void rightDigitSingleDigitNumbers() {
+        List<Integer> nums = Arrays.asList(1, 22, 93);
+        assertEquals( functional1.rightDigit(nums), Arrays.asList(1, 2, 3));
+    }
+
+    @Test
+    void rightDigitMultipleDigitNumbers() {
+        List<Integer> nums = Arrays.asList(16, 8, 886, 8, 1);
+        assertEquals( functional1.rightDigit(nums), Arrays.asList(6, 8, 6, 8, 1));
+    }
+
+    @Test
+    void rightDigitNumbersEndingWithZero() {
+        List<Integer> nums = Arrays.asList(10, 0);
+        assertEquals( functional1.rightDigit(nums), Arrays.asList(0, 0));
     }
 
     @Test
