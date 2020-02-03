@@ -1,3 +1,5 @@
+package functional1;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -141,10 +143,38 @@ class Functional1Test {
     }
 
     @Test
-    void lower() {
+    void lowerWordsWithCaps() {
+        List<String> strings = Arrays.asList("Hello", "Hi");
+        assertEquals( functional1.lower(strings), Arrays.asList("hello", "hi"));
     }
 
     @Test
-    void noX() {
+    void lowerLettersAllCaps() {
+        List<String> strings = Arrays.asList("AAA", "BBB", "ccc");
+        assertEquals( functional1.lower(strings), Arrays.asList("aaa", "bbb", "ccc"));
+    }
+
+    @Test
+    void lowerWordsRandomCaps() {
+        List<String> strings = Arrays.asList("KitteN", "ChocolaTE");
+        assertEquals( functional1.lower(strings), Arrays.asList("kitten", "chocolate"));
+    }
+
+    @Test
+    void noXOneX() {
+        List<String> strings = Arrays.asList("ax", "bb", "cx");
+        assertEquals( functional1.noX(strings), Arrays.asList("a", "bb", "c"));
+    }
+
+    @Test
+    void noXMultipleX() {
+        List<String> strings = Arrays.asList("xxax", "xbxbx", "xxcx");
+        assertEquals( functional1.noX(strings), Arrays.asList("a", "bb", "c"));
+    }
+
+    @Test
+    void noXSingleX() {
+        List<String> strings = Arrays.asList("x");
+        assertEquals( functional1.noX(strings), Arrays.asList(""));
     }
 }
